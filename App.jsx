@@ -94,9 +94,11 @@ function App() {
         ))}
       </div>
 
-      <h2>
-        Shopping Cart ({cart.length})
-      </h2>
+     <h2>
+  Shopping Cart (
+  {cart.reduce((total, item) => total + item.qty, 0)}
+  )
+</h2>
 
       {cart.map((item) => (
         <div className="cart-card" key={item.id}>
